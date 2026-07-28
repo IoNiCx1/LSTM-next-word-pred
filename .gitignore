@@ -1,4 +1,1 @@
 venv
-# In your .gitignore file
-*.h5
-*.keras
