@@ -20,7 +20,7 @@ def generate_text(seed_text,num_words=10):
     for _ in range(num_words):
         seq= tokenizer.texts_to_sequences([text])
         padded = pad_sequences([seq],maxlen = max_len,padding = 'pred')
-        model.predict(padded,verbose = 0)
+        preds =model.predict(padded,verbose = 0)
         pos= np.argmax(preds)
         next_word = reverse_index.get(pos," ")
         text+=" "+next_word
